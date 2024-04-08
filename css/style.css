@@ -37,6 +37,12 @@ main ol,ul {
     margin-left: 15px;
 }
 
+main td {
+    margin: 4px;
+    padding: 4px auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .txt_destaque {
     font-style: italic;
     color: cadetblue;
