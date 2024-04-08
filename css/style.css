@@ -1,0 +1,28 @@
+* {
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+body {
+    background-color: lavender;
+}
+
+header nav {
+    display: inline-block;
+    margin-left: 800px;
+}
+
+.logo {
+    height: 100px;
+}
+footer {
+    margin-top: 700px;
+}
+
+footer p {
+    text-align: center;
+    font-size: small;
+}
