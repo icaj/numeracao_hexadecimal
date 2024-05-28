@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="quiz.css" />
+    <title>Quiz</title>
+  </head>
+
+  <body>
+
+    <header>
+      
+      <figure class="class">
+        <img src="AdobeStock_777573036_Preview.png" alt="" class="logo">
+      </figure>
+      
+      <nav class="menu-container">
+        <a href="index.html" class="item">Home</a>
+        <a href="sobre.html" class="item">Sobre</a>
+        <a href="quiz.html" class="item">Quiz</a>
+        <a href="calculadora.html" class="item">Calculadora</a>
+        <a href="contato.html" class="item">Contato</a>
+</nav>
+    
+    </header>
+    
+    <h1 class="titulo">Quiz sobre Sistemas Hexadecimais</h1>
+  
+    <div class="margem">
+      <div id="quiz">    
+        <h2 id="pergunta"></h2>
+        <ol id="opcoes"></ol>
+        <button id="botao">Responder</button>
+      </div>
+      <div id="resultado"></div>
+    </div>
+
+    <script>
+      // Array de perguntas e respostas
+      const questoes = [
+        {
+          questao: "Qual a origem do sistema hexadecimal?",
+          opcoes: ["É usado desde a antiguidade para representar números", "Foi desenvolvido no século XVIII para codificar mensagens secretas", "Foi criado nos anos 1960 como parte da linguagem de programação COBOL"],
+          resposta: "É usado desde a antiguidade para representar números"
+        },
+        {
+          questao: "Por que o sistema hexadecimal é usado em computação?",
+          opcoes: ["Por ser mais eficiente na representação de números decimais", "Por facilitar a conversão entre bases numéricas", "Por ser uma tradição na indústria de TI"],
+          resposta: "Por facilitar a conversão entre bases numéricas"
+        },
+        {
+          questao: "Quantos símbolos diferentes o sistema hexadecimal usa?",
+          opcoes: ["8", "10", "16"],
+          resposta: "16"
+        },
+        {
+          questao: "Qual é o primeiro símbolo usado no sistema hexadecimal após o 9?",
+          opcoes: ["A", "B", "C"],
+          resposta: "A"
+        },
+        {
+          questao: "Como os números acima de 9 são representados no sistema hexadecimal?",
+          opcoes: ["Com letras do alfabeto", "Com símbolos especiais", "Com números romanos"],
+          resposta: "Com letras do alfabeto"
+        },
+        {
+          questao: "Qual é a relação entre o sistema hexadecimal e os computadores?",
+          opcoes: ["Não há relação direta", "Os computadores usam hexadecimal apenas para operações matemáticas complexas", "Os computadores usam o sistema hexadecimal para representar cores e endereços de memória"],
+          resposta: "Os computadores usam o sistema hexadecimal para representar cores e endereços de memória"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número binário 1010?",
+          opcoes: ["A", "B", "C"],
+          resposta: "A"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número binário 1101?",
+          opcoes: ["D", "E", "F"],
+          resposta: "D"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número binário 0011?",
+          opcoes: ["2", "3", "4"],
+          resposta: "3"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número binário 1111?",
+          opcoes: ["9", "A", "F"],
+          resposta: "F"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número binário 1001?",
+          opcoes: ["7", "8", "9"],
+          resposta: "9"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número decimal 10?",
+          opcoes: ["A", "B", "C"],
+          resposta: "A"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número decimal 15?",
+          opcoes: ["D", "E", "F"],
+          resposta: "F"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número decimal 20?",
+          opcoes: ["13", "14", "15"],
+          resposta: "14"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número decimal 30?",
+          opcoes: ["1E", "1F", "20"],
+          resposta: "1E"
+        },
+        {
+          questao: "Qual é o valor hexadecimal do número decimal 255?",
+          opcoes: ["FE", "FF", "100"],
+          resposta: "FF"
+        },
+        {
+          questao: "Qual é o valor decimal do número hexadecimal A?",
+          opcoes: ["9", "10", "11"],
+          resposta: "10"
+        },
+        {
+          questao: "Qual é o valor decimal do número hexadecimal 1F?",
+          opcoes: ["29", "30", "31"],
+          resposta: "31"
+        },
+        {
+          questao: "Qual é o valor decimal do número hexadecimal FF?",
+          opcoes: ["250", "255", "260"],
+          resposta: "255"
+        },
+        {
+          questao: "Qual é o valor decimal do número hexadecimal 2A?",
+          opcoes: ["42", "43", "44"],
+          resposta: "42"
+        },
+        {
+          questao: "Qual é o valor decimal do número hexadecimal B5?",
+          opcoes: ["181", "182", "183"],
+          resposta: "181"
+        },
+        {
+          questao: "Qual é o valor decimal do número hexadecimal 3E?",
+          opcoes: ["60", "61", "62"],
+          resposta: "62"
+        }
+      ];
+
+      let nummero_pergunta = -1;
+      const perg = document.getElementById("pergunta");
+      const ul = document.getElementById("opcoes");
+      const botao = document.getElementById('botao');
+      let resultado = document.getElementById("resultado");
+      var respostas_certas = 0;
+      var respostas_erradas = 0;
+      let resposta_usuario = '';
+
+      var pp = function proxPergunta(event) {
+        nummero_pergunta++;
+        if(nummero_pergunta == questoes.length) {
+          exibe_resultado();
+        }
+        // exibe a pergunta a ser exibida
+        perg.textContent = questoes[nummero_pergunta].questao;
+
+        ul.innerHTML = '';
+        resultado.innerHTML = "";
+          
+        // exibe as opções de resposta
+        for (let i = 0; i < questoes[nummero_pergunta].opcoes.length; i++) {
+          li = document.createElement("li");
+
+          radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "xxx"
+
+          const label = document.createElement("label");
+          label.textContent = questoes[nummero_pergunta].opcoes[i];
+
+          li.appendChild(radio);
+          li.appendChild(label);
+          li.addEventListener('click', () => {
+            resposta_usuario = label.textContent;
+          });
+          ul.appendChild(li);
+        }
+        document.getElementById("botao").removeEventListener('click', pp)
+        document.getElementById("botao").addEventListener('click', cr)
+        let botao = document.getElementById("botao");
+        botao.textContent = "Enviar";
+      }
+
+      var cr = function checaResposta(event) {
+        resultado = document.getElementById("resultado");
+        if (resposta_usuario == questoes[nummero_pergunta].resposta) {
+          respostas_certas++;
+          resultado.innerHTML = "<p class='resp_certa'>Resposta Certa ! " + questoes[nummero_pergunta].resposta + "</p>";
+        } else {
+          respostas_erradas++;
+          resultado.innerHTML = "<p class='resp_errada'>Resposta Errada ! " + questoes[nummero_pergunta].resposta + "</p>";
+        }
+          
+        let botao = document.getElementById("botao");
+        botao.textContent = "Próxima Pergunta";
+        document.getElementById("botao").removeEventListener('click', cr)
+        document.getElementById("botao").addEventListener('click', pp)
+      }
+
+      function exibe_resultado() {
+        div = document.getElementById('quiz');
+        div.innerHTML = '';
+
+        div1 = document.createElement("div");
+        div1.innerHTML = 'Respostas certas: ' + respostas_certas;
+        div.appendChild(div1);
+
+        div2 = document.createElement("div");
+        div2.innerHTML = 'Respostas erradas: ' + respostas_erradas;
+        div.appendChild(div2);
+
+        resultado.innerHTML = "";
+      }
+
+      respostas_certas = 0;
+      respostas_erradas = 0;
+      botao.addEventListener('click', pp);
+        
+      botao.dispatchEvent('click', pp(event));
+
+    </script>
+
+    <footer>
+      <div class="footer-content">
+        <p>Cesar School</p>
+        <p>Equipe 6 - Curso ADS 2024.1</p>
+        <p>&copy; 2024</p>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

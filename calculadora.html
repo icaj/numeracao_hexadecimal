@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="calculadora.css">
+        <link rel="stylesheet" href="quiz.css">
+        <script src="calculadora.js"></script>
+    </head>
+    
+    <body>
+        <header>
+      
+            <figure class="class">
+              <img src="AdobeStock_777573036_Preview.png" alt="" class="logo">
+            </figure>
+            
+            <nav class="menu-container">
+                <a href="index.html" class="item">Home</a>
+                <a href="sobre.html" class="item">Sobre</a>
+                <a href="quiz.html" class="item">Quiz</a>
+                <a href="calculadora.html" class="item">Calculadora</a>
+                <a href="contato.html" class="item">Contato</a>
+            </nav>
+          
+        </header>
+          
+        <h1 class="titulo">Calculadora Hexadecimal</h1>
+
+        <div class="tela">
+            <div class="calculadora">
+                <div class="display" id="display">0</div>
+                <div class="botoes">
+                    <button class="botao acao" onclick="limparTela()">Limpar</button>
+                    <button class="botao" onclick="digito('7')">7</button>
+                    <button class="botao" onclick="digito('8')">8</button>
+                    <button class="botao" onclick="digito('9')">9</button>
+                    <button class="botao acao" onclick="converteHexa()">Hex</button>
+                    <button class="botao" onclick="digito('4')">4</button>
+                    <button class="botao" onclick="digito('5')">5</button>
+                    <button class="botao" onclick="digito('6')">6</button>
+                    <button class="botao"> </button>
+                    <button class="botao" onclick="digito('1')">1</button>
+                    <button class="botao" onclick="digito('2')">2</button>
+                    <button class="botao" onclick="digito('3')">3</button>
+                    <button class="botao"> </button>
+                    <button class="botao zero" onclick="digito('0')">0</button>
+                    <button class="botao" onclick="digito('.')">.</button>
+                </div>
+            </div>
+        </div>
+      
+    </body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EducaTech</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        
+        <header>
+            <figure class="class">
+                <img src="AdobeStock_777573036_Preview.png" alt="" class="logo">
+            </figure>
+            <nav class="menu-container">
+                <a href="index.html" class="item">Home</a>
+                <a href="sobre.html" class="item">Sobre</a>
+                <a href="quiz.html" class="item">Quiz</a>
+                <a href="calculadora.html" class="item">Calculadora</a>
+                <a href="contato.html" class="item">Contato</a>
+            </nav>
+        </header>
+
+        <main>
+            <div>
+                <h1>O Sistema Hexadecimal</h1>
+                <p class="sessao">
+                    Enquanto o sistema decimal e seus dez dígitos estão profundamente enraizados em nossas vidas diárias, 
+                    a ciência da computação e o processamento de dados dependem fortemente do <span class="txt_destaque">sistema binário</span>, 
+                    ou código binário. O sistema binário torna possível representar situações complexas com apenas dois estados: 
+                    0 e 1. No entanto, grandes números binários rapidamente se tornam confusos. É aqui que o sistema hexadecimal pode ajudar. 
+                    As informações expressas com oito dígitos no sistema binário podem ser expressas com apenas dois números hexadecimais.
+                </p>
+            </div>
+    
+            <div class="sessao">
+                <h3>Conteúdo</h3>
+                <p>
+                    <ol>
+                        <li><a href="#1">O que é o sistema hexadecimal?</a></li>
+                        <li><a href="#2">Para que é usado?</a></li>
+                        <li><a href="#3">Sistema hexadecimal: como escrevê-lo?</a></li>
+                        <li><a href="#4">A relação entre números hexadecimais e binários</a></li>
+                        <li><a href="#5">Tabela hexadecimal para conversão em números decimais e binários</a></li>
+                        <li><a href="#6">Contando com números hexadecimais</a></li>
+                        <li><a href="#7">Resumo</a></li>
+                    </ol>
+                </p>
+            </div>
+    
+            <div class="sessao" id="1">
+                <h2>1. O que é o sistema hexadecimal?</h2>
+                <p>
+                    A palavra hexadecimal é composta pelos termos hexa e decimal. Hexa vem do grego e significa “seis”, 
+                    enquanto decem é a palavra latina para “dez”. O sistema hexadecimal é, portanto, um sistema de valor 
+                    posicional que representa números usando a base 16. Isso significa que o sistema hexadecimal usa 16 dígitos
+                    diferentes. Ou seja, são 16 dígitos possíveis, em contraste com os dois do sistema binário (0 e 1) e os
+                    dez do sistema decimal (0 a 9). Mas qual é o propósito do sistema?
+                </p>
+            </div>
+    
+            <div class="sessao" id="2">
+                <h2>2. Para que é usado o sistema hexadecimal?</h2>
+                <p>
+                    O sistema hexadecimal é usado na tecnologia de computadores e torna mais legíveis números grandes e 
+                    sequências de bits longas. Eles são agrupados em seções de quatro bits e depois convertidos em números 
+                    hexadecimais. O resultado é que uma longa sequência de uns e zeros é transformada em números hexadecimais 
+                    mais curtos, que por sua vez podem ser divididos em grupos de dois ou quatro. Os números hexadecimais 
+                    são, portanto, uma forma mais compacta de representar sequências de bits. O sistema é usado, por exemplo, 
+                    para endereços de origem e destino em protocolos de Internet (IPs) , em códigos ASCII ou para descrever 
+                    códigos de cores em web design com a linguagem de folha de estilo CSS.
+                </p>
+            </div>
+    
+            <div class="sessao" id="3">
+                <h2>3. Sistema hexadecimal: como escrevê-lo?</h2>
+                <p>
+                    Conforme mencionado acima, o sistema hexadecimal utiliza 16 dígitos. É aqui que nos deparamos com um problema 
+                    potencial. Na nossa forma tradicional de escrever números usamos os números decimais 10, 11, 12, 13, 14 e 15, 
+                    que consistem em dois símbolos reunidos. Portanto, se você usasse o número 10 em notação hexadecimal, não ficaria 
+                    claro o que você quer dizer.
+                </p>
+                <p>
+                    Para evitar esse problema, as letras de A a F são usadas para representar os números de dez a 15 no sistema hexadecimal. 
+                    Portanto, no total, os números de 0 a 9 e de A a F são usados para representar os equivalentes de números binários e números 
+                    decimais. Existem várias notações disponíveis para distinguir números hexadecimais de números decimais:
+                </p>
+                <p>
+                    <ul>
+                        <li>76<sub>16</sub></li>
+                        <li>73 hexadecimal</li>
+                        <li>73h</li>
+                        <li>73H</li>
+                        <li>0x73</li>
+                        <li>R$ 73</li>
+                        <li>#73</li>
+                        <li>"73</li>
+                        <li>X'73'</li>
+                    </ul>
+                </p>
+                <p>
+                    O prefixo 0x e o sufixo h são especialmente comuns em programação, e o prefixo cifrão $ é freqüentemente usado em certas famílias
+                    de processadores em linguagem assembly.
+                </p>
+            </div>
+    
+            <div class="sessao" id="4">
+                <h2>4. A relação entre números hexadecimais e números binários</h2>
+                <p>
+                    Quando se trata de representar estados complexos, sequências de bits e strings binárias podem ser muito longas. No uso diário do sistema 
+                    decimal, usamos grupos de três dígitos para tornar mais legíveis números grandes como milhões, bilhões e trilhões. O mesmo vale para sistemas 
+                    digitais. Para facilitar a leitura de sequências de bits como 1111010111001111<sub>2</sub>, elas geralmente são divididas em grupos de quatro. Portanto, 
+                    nosso exemplo ficaria assim: 1111 0101 1100 1111<sub>2</sub>. Fica ainda mais fácil de ler quando os números binários são convertidos para o sistema 
+                    hexadecimal.
+                </p>
+                <p>
+                    Como dezesseis é a quarta potência de dois (2<sup>4</sup>), existe uma relação direta entre os números dois e dezesseis: um dígito hexadecimal corresponde 
+                    a quatro dígitos binários. Isso significa que você pode representar quatro dígitos de um número binário com um único dígito hexadecimal. 
+                    Isto torna a conversão entre números binários e hexadecimais relativamente fácil, e grandes números binários podem ser escritos no sistema hexadecimal 
+                    com menos dígitos.
+                </p>
+            </div>
+            
+            <div class="sessao" id="5">
+                <h2>5. Tabela hexadecimal para conversão em números decimais e binários</h2>
+                <p>
+                    O sistema hexadecimal é mais complexo que os sistemas binário e decimal e é frequentemente usado em conexão com endereços de memória. Os números 
+                    binários são divididos em grupos de quatro bits, e cada grupo de bits possui um valor entre '0000' e '1111'. Isto resulta em 16 combinações de 
+                    números diferentes de 0 a 15. Observe que '0' também é um dígito válido.
+                </p>
+                <p>
+                    <table>
+                        <th>Decimal</th>
+                        <th>Binário de 4 bits</th>
+                        <th>Hexadecimal</th>
+                        <tr>
+                            <td>0</td>
+                            <td>0000</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0001</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>0010</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>0012</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>0100</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>0101</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>0110</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>0111</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>1000</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>1001</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>1010</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>1011</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>1100</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>1101</td>
+                            <td>D</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>1110</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>1111</td>
+                            <td>F</td>
+                        </tr>
+                    </table>
+                </p>
+                <p>
+                    De acordo com a tabela de conversão hexadecimal, a sequência numérica binária 1111 0101 1100 1111<sub>2</sub> anterior terá esta aparência no sistema 
+                    hexadecimal: F5CF . Este número é muito mais fácil de ler do que a longa sequência de bits. O sistema hexadecimal pode ser usado para escrever 
+                    código digital com menos dígitos e, portanto, menos chances de cometer erros . A conversão de números hexadecimais de volta em números binários 
+                    pode ser feita com a mesma facilidade, usando a mesma tabela hexadecimal acima.
+                </p>
+                <p>
+                    Para deixar claro que o número é hexadecimal, podemos escrevê-lo da seguinte forma: F5CF 16 , $F5CF ou #F5CF . A última notação, também chamada 
+                    de valor hash, é usada para codificação digital de cores, uma vez que designers e desenvolvedores usam cores hexadecimais em web design. As cores 
+                    hexadecimais são representadas por uma combinação de números e letras de seis casas, determinada pela mistura de vermelho, verde e azul ( RGB ). 
+                    #000000 significa preto e #FFFFFF significa branco.
+                </p>
+            </div>
+    
+            <div class="sessao" id="6">
+                <h2>6. Contando com números hexadecimais</h2>
+                <p>
+                    Agora você sabe como converter números binários em números hexadecimais. Se você estiver trabalhando com mais de quatro dígitos binários, 
+                    simplesmente recomece ou continue com o próximo conjunto de quatro bits. Com dois dígitos hexadecimais você pode contar até FF, que corresponde 
+                    ao número decimal 255.
+                </p>
+                <p>
+                    Adicionar dígitos hexadecimais adicionais para converter um número binário em um número hexadecimal é muito fácil quando você tem quatro, 
+                    oito, doze ou dezesseis dígitos. Mas você também pode adicionar '0' ou '00' à esquerda do bit mais alto, mesmo que o número de dígitos 
+                    binários não seja mais um múltiplo de quatro. Por exemplo, 110010110110011<sub>2</sub> é um número binário de quatorze bits, que é grande demais 
+                    para três dígitos hexadecimais, mas pequeno demais para quatro.
+                </p>
+                <p>
+                    A solução é adicionar zeros adicionais à extremidade esquerda do número até ter um conjunto completo de números binários de quatro bits. 
+                    Em nosso exemplo, ficaria assim: 00 110010110110011<sub>2</sub>.
+                </p>
+            </div>
+    
+            <div class="sessao" id="7">
+                <h2>7. Resumo</h2>
+                <p>
+                    A maior vantagem do sistema hexadecimal é a compactação de seus números, uma vez que são necessários menos dígitos para representar 
+                    um número do que na notação binária ou decimal. Isso se deve à sua base de dezesseis. E é relativamente fácil converter números binários 
+                    em números hexadecimais e vice-versa.
+                </p>
+            </div>
+
+            <div class="sessao" id="8">
+                <h2>8. Quiz</h2>
+                <p>
+                    <a href="quiz.html">Teste seus conhecimentos</a>
+                </p>
+            </div>
+
+            <div class="sessao" id="9">
+                <h2>9. Calculadora</h2>
+                <p>
+                    <a href="calculadora.html">Calculadora hexadecimal / decimal</a>
+                </p>
+            </div>
+
+        </main>
+    
+        <footer>
+            <div class="footer-content">
+                <p>Cesar School</p>
+                <p>Equipe 6 - Curso ADS 2024.1</p>
+                <p>&copy; 2024</p>
+            </div>
+        </footer>
+
+    </body>
+</html>
